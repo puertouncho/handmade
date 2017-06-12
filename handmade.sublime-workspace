@@ -3,6 +3,66 @@
 	{
 		"selected_items":
 		[
+			[
+				"Bitma",
+				"BitmapDeviceContext"
+			],
+			[
+				"Bitm",
+				"BitmapInfo"
+			],
+			[
+				"Bit",
+				"BitmapHandler"
+			],
+			[
+				"H",
+				"Height"
+			],
+			[
+				"W",
+				"Width"
+			],
+			[
+				"Wi",
+				"Window"
+			],
+			[
+				"Win32",
+				"Win32UpdateWindow"
+			],
+			[
+				"WM_",
+				"WM_DESTROY"
+			],
+			[
+				"Whi",
+				"WHITENESS"
+			],
+			[
+				"Win",
+				"Window"
+			],
+			[
+				"Mess",
+				"MessageResult"
+			],
+			[
+				"lp",
+				"lpszClassName"
+			],
+			[
+				"lpsz",
+				"lpszMenuName"
+			],
+			[
+				"h",
+				"hInstance"
+			],
+			[
+				"s",
+				"style"
+			]
 		]
 	},
 	"buffers":
@@ -11,7 +71,17 @@
 			"file": "code/win32_handmade.cpp",
 			"settings":
 			{
-				"buffer_size": 406,
+				"buffer_size": 4034,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "code/build.bat",
+			"settings":
+			{
+				"buffer_size": 117,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -72,7 +142,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -86,6 +156,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"=\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -118,18 +189,18 @@
 				{
 					"buffer": 0,
 					"file": "code/win32_handmade.cpp",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 406,
+						"buffer_size": 4034,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1717,
+								1717
 							]
 						],
 						"settings":
@@ -137,7 +208,7 @@
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 660.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -146,14 +217,43 @@
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 1,
+					"file": "code/build.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 117,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								113
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -197,7 +297,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 0.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
