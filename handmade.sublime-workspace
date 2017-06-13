@@ -4,16 +4,44 @@
 		"selected_items":
 		[
 			[
-				"Bitma",
-				"BitmapDeviceContext"
+				"Window",
+				"WindowRect"
 			],
 			[
-				"Bitm",
-				"BitmapInfo"
+				"X",
+				"XOffset"
+			],
+			[
+				"Mess",
+				"Message"
 			],
 			[
 				"Bit",
-				"BitmapHandler"
+				"BitmapHeight"
+			],
+			[
+				"Bitmap",
+				"BitmapHeight"
+			],
+			[
+				"Bitma",
+				"BitmapWidth"
+			],
+			[
+				"WindowH",
+				"WidnowHeight"
+			],
+			[
+				"Wi",
+				"WindowWidth"
+			],
+			[
+				"Bi",
+				"BitmapMemory"
+			],
+			[
+				"Bitm",
+				"BitmapMemory"
 			],
 			[
 				"H",
@@ -22,10 +50,6 @@
 			[
 				"W",
 				"Width"
-			],
-			[
-				"Wi",
-				"Window"
 			],
 			[
 				"Win32",
@@ -42,10 +66,6 @@
 			[
 				"Win",
 				"Window"
-			],
-			[
-				"Mess",
-				"MessageResult"
 			],
 			[
 				"lp",
@@ -71,7 +91,7 @@
 			"file": "code/win32_handmade.cpp",
 			"settings":
 			{
-				"buffer_size": 4034,
+				"buffer_size": 5406,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -80,7 +100,7 @@
 			"file": "code/build.bat",
 			"settings":
 			{
-				"buffer_size": 117,
+				"buffer_size": 121,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -142,7 +162,7 @@
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
@@ -156,6 +176,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"PM_REMOVE",
 			"=\n"
 		],
 		"highlight": true,
@@ -192,15 +213,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4034,
+						"buffer_size": 5406,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1717,
-								1717
+								309,
+								309
 							]
 						],
 						"settings":
@@ -208,7 +229,7 @@
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 660.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -226,15 +247,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 117,
+						"buffer_size": 121,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								117,
-								113
+								55,
+								55
 							]
 						],
 						"settings":
@@ -242,7 +263,7 @@
 							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -297,7 +318,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 52.0
+		"height": 80.0
 	},
 	"save_all_on_build": true,
 	"select_file":
