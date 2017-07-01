@@ -28,7 +28,6 @@ struct win32_offscreen_buffer
 	void *Memory;
 	int Width;
 	int Height;
-	int BytesPerPixel;
 	int Pitch;
 };
 
@@ -87,7 +86,7 @@ Win32ResizeDIBSection(win32_offscreen_buffer *Buffer, int Width, int Height)
 
 	Buffer->Width  = Width;
 	Buffer->Height = Height;
-	Buffer->BytesPerPixel = 4;
+	int BytesPerPixel = 4;
 
 	Buffer->Info.bmiHeader.biSize   		 = sizeof(Buffer->Info.bmiHeader);
 	Buffer->Info.bmiHeader.biWidth  		 = Buffer->Width;
@@ -98,18 +97,19 @@ Win32ResizeDIBSection(win32_offscreen_buffer *Buffer, int Width, int Height)
 
 	// Allocating Memory
 	
-	int BitmapMemorySize = (Buffer->Width*Buffer->Height) * Buffer->BytesPerPixel;
+	int BitmapMemorySize = (Buffer->Width*Buffer->Height) * BytesPerPixel;
 	Buffer->Memory = VirtualAlloc(0,BitmapMemorySize,MEM_COMMIT,PAGE_READWRITE);
 	
-	Buffer->Pitch = Width*Buffer->BytesPerPixel;
+	Buffer->Pitch = Width*BytesPerPixel;
 	// Probably clear to black
 }
 
 internal void
 Win32DisplayBufferInWindow(HDC DeviceContext, int WindowWidth, int WindowHeight, 
-						   win32_offscreen_buffer Buffer, int X, int Y, int Width, int Height)
+						   win32_offscreen_buffer Buffer)
 {
 	// TODO: Aspect Ratio correction
+	// TODO: Play with stretch modes
 	StretchDIBits(DeviceContext, 
 				  /*X, Y, Width, Height,
 				  X, Y, Width, Height,*/
@@ -157,14 +157,9 @@ Win32MainWindowCallback(HWND   Window,
 			PAINTSTRUCT Paint;
 			HDC DeviceContext = BeginPaint(Window, &Paint);
 
-			int X = Paint.rcPaint.left;
-			int Y = Paint.rcPaint.bottom;
-			LONG Height = Paint.rcPaint.bottom - Paint.rcPaint.top; 
-			LONG Width  = Paint.rcPaint.right - Paint.rcPaint.left; 
-
 			win32_window_dimension WindowDimension = Win32GetWindowDimension(Window);
 			Win32DisplayBufferInWindow(DeviceContext, WindowDimension.Width, WindowDimension.Height, 
-									   GlobalBackbuffer, X, Y, Width, Height);
+									   GlobalBackbuffer);
 
 			EndPaint(Window, &Paint);
 		}
@@ -195,7 +190,7 @@ int CALLBACK WinMain( HINSTANCE Instance,
 
 	Win32ResizeDIBSection(&GlobalBackbuffer, 1280, 720);
 
-	WindowClass.style 			= CS_HREDRAW|CS_VREDRAW;
+	WindowClass.style 			= CS_HREDRAW|CS_VREDRAW|CS_OWNDC;
 	WindowClass.lpfnWndProc 	= Win32MainWindowCallback;
 	WindowClass.hInstance 		= Instance;
 	WindowClass.lpszClassName 	= "HandmadeHeroWindowClass"; 
@@ -216,6 +211,10 @@ int CALLBACK WinMain( HINSTANCE Instance,
 						  		      0);
 		if(Window)
 		{
+			// NOTE: Since we specifies CS_OWNDC we can just get one device context
+			// and keep it forever
+			HDC DeviceContext = GetDC(Window);
+
 			Running = true;
 			int XOffset = 0;
 			int YOffset = 0;
@@ -233,12 +232,10 @@ int CALLBACK WinMain( HINSTANCE Instance,
 				}
 
 				RenderWeirdGradient(GlobalBackbuffer, XOffset, YOffset);
-				HDC DeviceContext = GetDC(Window);
-
+				
 				win32_window_dimension WindowDimension = Win32GetWindowDimension(Window);
 				Win32DisplayBufferInWindow(DeviceContext, WindowDimension.Width, WindowDimension.Height, 
-										   GlobalBackbuffer, 0, 0, WindowDimension.Width, WindowDimension.Height);
-				ReleaseDC(Window, DeviceContext);
+										   GlobalBackbuffer);
 
 				XOffset++;
 			}

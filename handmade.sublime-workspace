@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"Wind",
+				"WindowDimension"
+			],
+			[
+				"Get",
+				"GetWindowDimension"
+			],
+			[
+				"win32",
+				"win32_window_dimension"
+			],
+			[
+				"Pi",
+				"BytesPerPixel"
+			],
+			[
 				"Window",
 				"WindowRect"
 			],
@@ -91,7 +107,7 @@
 			"file": "code/win32_handmade.cpp",
 			"settings":
 			{
-				"buffer_size": 5406,
+				"buffer_size": 5937,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -162,7 +178,7 @@
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -213,15 +229,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5406,
+						"buffer_size": 5937,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								309,
-								309
+								2739,
+								2739
 							]
 						],
 						"settings":
@@ -229,7 +245,7 @@
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1740.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -254,8 +270,8 @@
 						"selection":
 						[
 							[
-								55,
-								55
+								121,
+								121
 							]
 						],
 						"settings":
@@ -300,7 +316,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.642032332564,
 			1.0
 		],
 		"rows":
@@ -318,7 +334,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 80.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
